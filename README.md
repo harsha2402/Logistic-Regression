@@ -1,2 +1,9 @@
-# Machine-Learning
-My Machine Learning Projects are listed here. 
+Stochastic Gradient Solution
+The implementation of this algorithm is to use SGD to find the basis function and other hyper-parameter for the data sets of LeToR and Synthetic.
+First we split the data into three sets, training set, validation set and testing set. Then the next step is to k means function to find the centroid of the training set. According to centroid we can find the Σ matrix. Then use the formula : ϕj(x) = exp (−1 2(x − μj)⊤Σ− j 1(x − μj)) to get the design matrix , we got the design matrix of training set, validation set, and testing set,
+
+We then can use the these design matrix to calculate, to plug into early stop algorithm, which runs the SGD solution function, the SGD solution function will find the weights for the basis function. We use early stop algorithm to approaches the best result of the weight. The early stop algorithm will gradient descent to the best solution according to the different basis function and find the weight. The most important hyper-parameter in this approach is to find learning rate, numbers of basis functions, and the patience for gradient descent solution to iterate. It is easy to find the learning rate since we find when learning rate bigger than 1, it likely to not converges, and small learning rate usually give same result but to iterate more steps in the Stochastic gradient descent function.
+
+So in this datasets we believe basis function is 15 fit best the data. Due to the capacity of the computer, the maximum basis can calculate is 15 basis function. As we can see the patience bigger than 10 also have very little influence on the result for this dataset.
+
+As a conclusion for Stochastic gradient descent approach, for synthetic dataset, basis function equal to 5. So in this datasets we believe basis function is 5 fit best the data.For LeToR dataset, we have numbers of basis function equal to 15. So in this datasets we believe basis function is 15 fit best the data.
